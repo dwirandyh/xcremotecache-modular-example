@@ -7,8 +7,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
    
   s.version = "1.0.0"
-   
-  s.license = { :type => "MIT", :file => "LICENSE" }
+  
   s.author = { "Dwi Randy Herdinanto" => "dwirandyherdinanto@gmail.com" }
   s.homepage = "https://github.com/dwirandyh/dicoding-ios-module"
   s.source = { :git => "https://github.com/dwirandyh/xcremoteexample.git", :tag => "1.0" }

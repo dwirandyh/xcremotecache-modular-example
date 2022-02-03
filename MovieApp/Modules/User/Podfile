@@ -1,6 +1,23 @@
+source 'https://cdn.cocoapods.org/'
+
 platform :ios, '12.0'
 inhibit_all_warnings!
+use_modular_headers!
 use_frameworks! :linkage => :static
+
+install! 'cocoapods',
+:generate_multiple_pod_projects => true,
+:incremental_installation => true
+
+plugin 'cocoapods-xcremotecache'
+
+xcremotecache({
+    'cache_addresses' => ['http://localhost:8080/cache/movieapp'],
+    'primary_repo' => 'git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git',
+    'primary_branch' => 'main',
+    'mode' => 'consumer',
+    'xcrc_location' => '../../../tools/xcremotecache',
+})
 
 target 'Launcher' do
 

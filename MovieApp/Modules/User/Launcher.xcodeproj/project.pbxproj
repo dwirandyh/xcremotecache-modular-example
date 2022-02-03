@@ -112,9 +112,11 @@
 			buildConfigurationList = 48BF5B8027ABB00A00FDE23E /* Build configuration list for PBXNativeTarget "Launcher" */;
 			buildPhases = (
 				6F7335CD5FD1B9CF80AD0404 /* [CP] Check Pods Manifest.lock */,
+				FEC02B0BCB601D49C817FDB1 /* [XCRC] Prebuild */,
 				48BF5B6827ABB00900FDE23E /* Sources */,
 				48BF5B6927ABB00900FDE23E /* Frameworks */,
 				48BF5B6A27ABB00900FDE23E /* Resources */,
+				785FDE55E49226767EFA6157 /* [XCRC] Postbuild */,
 			);
 			buildRules = (
 			);
@@ -193,6 +195,50 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		785FDE55E49226767EFA6157 /* [XCRC] Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$SRCROOT/../../../tools/xcremotecache/xcpostbuild",
+			);
+			name = "[XCRC] Postbuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
+		};
+		FEC02B0BCB601D49C817FDB1 /* [XCRC] Prebuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$SRCROOT/../../../tools/xcremotecache/xcprebuild",
+			);
+			name = "[XCRC] Prebuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_TEMP_DIR)/rc.enabled",
+				"$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -351,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -361,16 +408,26 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD = "$SRCROOT/../../../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../../../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.Launcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EXEC = "$SRCROOT/../../../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Debug;
 		};
@@ -380,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -390,16 +448,26 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD = "$SRCROOT/../../../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../../../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.Launcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EXEC = "$SRCROOT/../../../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Release;
 		};
