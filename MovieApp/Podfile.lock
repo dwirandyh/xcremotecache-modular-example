@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (5.5.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
+  - User (1.0.0):
+    - Alamofire (= 5.5)
+    - RxSwift (= 6.5.0)
+
+DEPENDENCIES:
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - SDWebImage (= 5.0)
+  - User (from `./Modules/User/`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  User:
+    :path: "./Modules/User/"
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  User: 6e3872dacd3d6c0c4f364568581ae72e8c809660
+
+PODFILE CHECKSUM: d3501fba44dd74210e5600e84f925be70844d075
+
+COCOAPODS: 1.11.2

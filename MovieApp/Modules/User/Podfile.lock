@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (5.5.0)
+  - RxSwift (6.5.0)
+  - User (1.0.0):
+    - Alamofire (= 5.5)
+    - RxSwift (= 6.5.0)
+
+DEPENDENCIES:
+  - User (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - RxSwift
+
+EXTERNAL SOURCES:
+  User:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  User: 6e3872dacd3d6c0c4f364568581ae72e8c809660
+
+PODFILE CHECKSUM: d8280e9bfdbf72a6a4852bf9531193dccf9413af
+
+COCOAPODS: 1.11.2
