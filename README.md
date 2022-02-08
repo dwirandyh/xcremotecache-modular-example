@@ -1,4 +1,4 @@
-# xcremotecache-modular-example
+# XCRemoteCache Example Project 
 
 This is an example project to introduce how to use XCRemoteCache
 
