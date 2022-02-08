@@ -15,8 +15,8 @@ xcremotecache({
     'cache_addresses' => ['http://localhost:8080/cache/movieapp'],
     'primary_repo' => 'git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git',
     'primary_branch' => 'main',
-    'mode' => 'producer',
-    'final_target' => 'Debug',
+    'mode' => 'consumer', # consumer / producer
+#    'final_target' => 'MovieApp', # producer only
     'xcrc_location' => '../tools/xcremotecache',
 })
 

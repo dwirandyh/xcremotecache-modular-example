@@ -3,6 +3,6 @@ cache_addresses:
 - http://localhost:8080/cache/movieapp
 primary_repo: git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git
 primary_branch: main
-mode: producer
+mode: consumer
 xccc_file: ".rc/xccc"
 remote_commit_file: ".rc/arc.rc"

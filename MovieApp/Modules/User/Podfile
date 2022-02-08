@@ -9,15 +9,15 @@ install! 'cocoapods',
 :generate_multiple_pod_projects => true,
 :incremental_installation => true
 
-plugin 'cocoapods-xcremotecache'
+# plugin 'cocoapods-xcremotecache'
 
-xcremotecache({
-    'cache_addresses' => ['http://localhost:8080/cache/movieapp'],
-    'primary_repo' => 'git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git',
-    'primary_branch' => 'main',
-    'mode' => 'consumer',
-    'xcrc_location' => '../../../tools/xcremotecache',
-})
+# xcremotecache({
+#     'cache_addresses' => ['http://localhost:8080/cache/movieapp'],
+#     'primary_repo' => 'git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git',
+#     'primary_branch' => 'main',
+#     'mode' => 'consumer',
+#     'xcrc_location' => '../../../tools/xcremotecache',
+# })
 
 target 'Launcher' do
 

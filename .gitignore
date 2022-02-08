@@ -39,3 +39,6 @@ playground.xcworkspace
 
 **/Pods/
 
+## Tools
+Tools/XCRemoteCache
+
