@@ -18,6 +18,9 @@
 
 /* Begin PBXFileReference section */
 		176D3A67642420758037B649 /* Pods-Launcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Launcher.release.xcconfig"; path = "Target Support Files/Pods-Launcher/Pods-Launcher.release.xcconfig"; sourceTree = "<group>"; };
+		48115FF327BCCA5C000E0A3B /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		485ADC0627BBB7100027CC24 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		485ADC0727BBB7100027CC24 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		48B1A31F27ABB0E2003165F2 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		48B1A32027ABB0F9003165F2 /* User.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = User.podspec; sourceTree = "<group>"; };
 		48BF5B6C27ABB00900FDE23E /* Launcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Launcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +51,9 @@
 			isa = PBXGroup;
 			children = (
 				48B1A31F27ABB0E2003165F2 /* UserViewController.swift */,
+				48115FF327BCCA5C000E0A3B /* Dummy.swift */,
+				485ADC0627BBB7100027CC24 /* SettingsViewController.h */,
+				485ADC0727BBB7100027CC24 /* SettingsViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -92,7 +98,6 @@
 				D2B2718213C8B577514D3051 /* Pods-Launcher.debug.xcconfig */,
 				176D3A67642420758037B649 /* Pods-Launcher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,7 +210,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$SRCROOT/../../../tools/xcremotecache/xcpostbuild",
+				$SRCROOT/../../../tools/xcremotecache/xcpostbuild,
 			);
 			name = "[XCRC] Postbuild";
 			outputFileListPaths = (
@@ -227,7 +232,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$SRCROOT/../../../tools/xcremotecache/xcprebuild",
+				$SRCROOT/../../../tools/xcremotecache/xcprebuild,
 			);
 			name = "[XCRC] Prebuild";
 			outputFileListPaths = (
@@ -397,7 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CC = "$SRCROOT/.rc/xccc";
+				CC = $SRCROOT/.rc/xccc;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -408,12 +413,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD = "$SRCROOT/../../../tools/xcremotecache/xcld";
+				LD = $SRCROOT/../../../tools/xcremotecache/xcld;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBTOOL = "$SRCROOT/../../../tools/xcremotecache/xclibtool";
+				LIBTOOL = $SRCROOT/../../../tools/xcremotecache/xclibtool;
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -423,7 +428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.Launcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_EXEC = "$SRCROOT/../../../tools/xcremotecache/xcswiftc";
+				SWIFT_EXEC = $SRCROOT/../../../tools/xcremotecache/xcswiftc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
@@ -437,7 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CC = "$SRCROOT/.rc/xccc";
+				CC = $SRCROOT/.rc/xccc;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -448,12 +453,12 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD = "$SRCROOT/../../../tools/xcremotecache/xcld";
+				LD = $SRCROOT/../../../tools/xcremotecache/xcld;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBTOOL = "$SRCROOT/../../../tools/xcremotecache/xclibtool";
+				LIBTOOL = $SRCROOT/../../../tools/xcremotecache/xclibtool;
 				MARKETING_VERSION = 1.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -463,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.Launcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_EXEC = "$SRCROOT/../../../tools/xcremotecache/xcswiftc";
+				SWIFT_EXEC = $SRCROOT/../../../tools/xcremotecache/xcswiftc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";

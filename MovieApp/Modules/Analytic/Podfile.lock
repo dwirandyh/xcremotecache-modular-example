@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Analytic (1.0.0):
+    - Alamofire (= 5.5)
+    - Analytic/Adjust (= 1.0.0)
+    - RxSwift (= 6.5.0)
+  - Analytic/Adjust (1.0.0):
+    - Alamofire (= 5.5)
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+
+DEPENDENCIES:
+  - Analytic (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - RxSwift
+
+EXTERNAL SOURCES:
+  Analytic:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Analytic: 4f87ed809fb0b4ad612253edb0257584364c49f2
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+
+PODFILE CHECKSUM: 6b11df8ba83426056c0fc2fe55b289dbbf5d92b3
+
+COCOAPODS: 1.11.2

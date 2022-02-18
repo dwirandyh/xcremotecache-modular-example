@@ -6,8 +6,7 @@ use_modular_headers!
 use_frameworks! :linkage => :static
 
 install! 'cocoapods',
-:generate_multiple_pod_projects => true,
-:incremental_installation => true
+:generate_multiple_pod_projects => true
 
 # plugin 'cocoapods-xcremotecache'
 

@@ -6,8 +6,7 @@ use_modular_headers!
 use_frameworks! :linkage => :static
 
 install! 'cocoapods',
-:generate_multiple_pod_projects => true,
-:incremental_installation => true
+:generate_multiple_pod_projects => true
 
 plugin 'cocoapods-xcremotecache'
 
@@ -16,14 +15,18 @@ xcremotecache({
     'primary_repo' => 'git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git',
     'primary_branch' => 'main',
     'mode' => 'consumer', # consumer / producer
-#    'final_target' => 'MovieApp', # producer only
+    'final_target' => 'MovieApp', # producer only
     'xcrc_location' => '../tools/xcremotecache',
+    'exclude_targets' => ['React-Core'],
+    'thinning_enabled' => true,
+    'custom_rewrite_envs' => ['PODS_TARGET_SRCROOT']
 })
 
 
 target 'MovieApp' do
 
   pod 'User', :path => './Modules/User/'
+  pod 'Analytic', :path => './Modules/Analytic/'
 
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'

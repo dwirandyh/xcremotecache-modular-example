@@ -154,7 +154,6 @@
 				D0CA7800670C2427E8E0D90C /* Pods-MovieAppTests.debug.xcconfig */,
 				470C592C21652311C86F1A3E /* Pods-MovieAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -176,9 +175,12 @@
 			buildConfigurationList = 48BF5B1E27ABADC000FDE23E /* Build configuration list for PBXNativeTarget "MovieApp" */;
 			buildPhases = (
 				93D9452FC75155752DFC6814 /* [CP] Check Pods Manifest.lock */,
+				40252AD54CD9B31979831409 /* [XCRC] Prebuild */,
 				48BF5AF027ABADBE00FDE23E /* Sources */,
 				48BF5AF127ABADBE00FDE23E /* Frameworks */,
 				48BF5AF227ABADBE00FDE23E /* Resources */,
+				426E479D270A650085BC007F /* [XCRC] Postbuild */,
+				BF1C8F9B0BB3C7DECA3303FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,9 +196,11 @@
 			buildConfigurationList = 48BF5B2127ABADC000FDE23E /* Build configuration list for PBXNativeTarget "MovieAppTests" */;
 			buildPhases = (
 				F2B0F989E917DC6C04044196 /* [CP] Check Pods Manifest.lock */,
+				B9ABBC30C47D8C4F9BCEA310 /* [XCRC] Prebuild */,
 				48BF5B0627ABADC000FDE23E /* Sources */,
 				48BF5B0727ABADC000FDE23E /* Frameworks */,
 				48BF5B0827ABADC000FDE23E /* Resources */,
+				F9B1DB8293BC9A9D23164F63 /* [XCRC] Postbuild */,
 			);
 			buildRules = (
 			);
@@ -213,9 +217,12 @@
 			buildConfigurationList = 48BF5B2427ABADC000FDE23E /* Build configuration list for PBXNativeTarget "MovieAppUITests" */;
 			buildPhases = (
 				6EA654FC0FDBFDD2342DA8D3 /* [CP] Check Pods Manifest.lock */,
+				5E4EEE146D0D47DF60F020B9 /* [XCRC] Prebuild */,
 				48BF5B1027ABADC000FDE23E /* Sources */,
 				48BF5B1127ABADC000FDE23E /* Frameworks */,
 				48BF5B1227ABADC000FDE23E /* Resources */,
+				7D4CDBDAF4EE53C70DC83325 /* [XCRC] Postbuild */,
+				404E01AF414FF7B709150068 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,7 +305,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CEEACBFC8A1232953176364 /* [XCRC] Prebuild */ = {
+		40252AD54CD9B31979831409 /* [XCRC] Prebuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
@@ -320,7 +327,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
-		34721F15F36FC2322955CE2C /* [XCRC] Postbuild */ = {
+		404E01AF414FF7B709150068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieApp-MovieAppUITests/Pods-MovieApp-MovieAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieApp-MovieAppUITests/Pods-MovieApp-MovieAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieApp-MovieAppUITests/Pods-MovieApp-MovieAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		426E479D270A650085BC007F /* [XCRC] Postbuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
@@ -342,23 +366,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
-		5071AEC194497031675565C2 /* [XCRC] Postbuild */ = {
+		5E4EEE146D0D47DF60F020B9 /* [XCRC] Prebuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
+			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$SRCROOT/../tools/xcremotecache/xcpostbuild",
+				"$SRCROOT/../tools/xcremotecache/xcprebuild",
 			);
-			name = "[XCRC] Postbuild";
+			name = "[XCRC] Prebuild";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
-				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+				"$(TARGET_TEMP_DIR)/rc.enabled",
+				"$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,6 +410,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7D4CDBDAF4EE53C70DC83325 /* [XCRC] Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$SRCROOT/../tools/xcremotecache/xcpostbuild",
+			);
+			name = "[XCRC] Postbuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
+		};
 		93D9452FC75155752DFC6814 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,7 +454,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A2DB166BB435591499207699 /* [XCRC] Prebuild */ = {
+		B9ABBC30C47D8C4F9BCEA310 /* [XCRC] Prebuild */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
@@ -430,49 +476,22 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
-		ED03E78931DFE52A8C106C98 /* [XCRC] Postbuild */ = {
+		BF1C8F9B0BB3C7DECA3303FF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieApp/Pods-MovieApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"$SRCROOT/../tools/xcremotecache/xcpostbuild",
-			);
-			name = "[XCRC] Postbuild";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
-				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+				"${PODS_ROOT}/Target Support Files/Pods-MovieApp/Pods-MovieApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
-		};
-		EE98D923D71D48482F4ABBAE /* [XCRC] Prebuild */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$SRCROOT/../tools/xcremotecache/xcprebuild",
-			);
-			name = "[XCRC] Prebuild";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_TEMP_DIR)/rc.enabled",
-				"$(DWARF_DSYM_FOLDER_PATH)/$(DWARF_DSYM_FILE_NAME)",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieApp/Pods-MovieApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		F2B0F989E917DC6C04044196 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -495,6 +514,28 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F9B1DB8293BC9A9D23164F63 /* [XCRC] Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$SRCROOT/../tools/xcremotecache/xcpostbuild",
+			);
+			name = "[XCRC] Postbuild";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(XCRC_PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -612,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -667,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -683,6 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -693,18 +735,27 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Debug;
 		};
@@ -714,6 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
@@ -724,18 +776,27 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Release;
 		};
@@ -745,25 +806,34 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieApp.app/MovieApp";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Debug;
 		};
@@ -773,25 +843,34 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieApp.app/MovieApp";
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Release;
 		};
@@ -800,24 +879,33 @@
 			baseConfigurationReference = 4B4CDE1193A737746E562144 /* Pods-MovieApp-MovieAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MovieApp;
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Debug;
 		};
@@ -826,24 +914,33 @@
 			baseConfigurationReference = 72E789A10F63AD45490E1AE0 /* Pods-MovieApp-MovieAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CC = "$SRCROOT/.rc/xccc";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RD7TLJ6X49;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD = "$SRCROOT/../tools/xcremotecache/xcld";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LIBTOOL = "$SRCROOT/../tools/xcremotecache/xclibtool";
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dwirandyh.MovieAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_EXEC = "$SRCROOT/../tools/xcremotecache/xcswiftc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MovieApp;
+				XCRC_PLATFORM_PREFERRED_ARCH = "$(LINK_FILE_LIST_$(CURRENT_VARIANT)_$(PLATFORM_PREFERRED_ARCH):dir:standardizepath:file:default=arm64)";
+				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Release;
 		};

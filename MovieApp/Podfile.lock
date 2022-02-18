@@ -1,5 +1,16 @@
 PODS:
   - Alamofire (5.5.0)
+  - Analytic (1.0.0):
+    - Alamofire (= 5.5)
+    - Analytic/Adjust (= 1.0.0)
+    - Analytic/Radar (= 1.0.0)
+    - RxSwift (= 6.5.0)
+  - Analytic/Adjust (1.0.0):
+    - Alamofire (= 5.5)
+    - RxSwift (= 6.5.0)
+  - Analytic/Radar (1.0.0):
+    - Alamofire (= 5.5)
+    - RxSwift (= 6.5.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -11,9 +22,11 @@ PODS:
   - SDWebImage/Core (5.0.0)
   - User (1.0.0):
     - Alamofire (= 5.5)
+    - Analytic
     - RxSwift (= 6.5.0)
 
 DEPENDENCIES:
+  - Analytic (from `./Modules/Analytic/`)
   - RxCocoa (= 6.5.0)
   - RxSwift (= 6.5.0)
   - SDWebImage (= 5.0)
@@ -28,17 +41,20 @@ SPEC REPOS:
     - SDWebImage
 
 EXTERNAL SOURCES:
+  Analytic:
+    :path: "./Modules/Analytic/"
   User:
     :path: "./Modules/User/"
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Analytic: 514664b1867b39266e170d6f8397587c03e8b28f
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
-  User: 6714305cf733ad8cef2f4845388c9886700ad86e
+  User: 6f8d0a35922271d554949def3fa63b94397f719b
 
-PODFILE CHECKSUM: 722f2228286f7db8da1e9bffcba1c9563355950c
+PODFILE CHECKSUM: 573763f89d6ae0a3a7585783cd147232a1e389e9
 
 COCOAPODS: 1.11.2

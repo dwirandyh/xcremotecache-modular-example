@@ -4,5 +4,8 @@ cache_addresses:
 primary_repo: git@github.com-dwirandyh:dwirandyh/xcremotecache-modular-example.git
 primary_branch: main
 mode: consumer
+thinning_enabled: true
+custom_rewrite_envs:
+- PODS_TARGET_SRCROOT
 xccc_file: ".rc/xccc"
 remote_commit_file: ".rc/arc.rc"
